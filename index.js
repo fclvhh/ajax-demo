@@ -27,6 +27,21 @@ const server = http.createServer((req, res) => {
     res.setHeader('Content-Type', 'text/css')
     res.write(fs.readFileSync('assets/style.css'))
     res.end()
+  }else if(path === "/try.js" && method === "GET" ){
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'application/javascript')
+    res.write(fs.readFileSync('assets/try.js'))
+    res.end()
+  }else if(path === "/3.html" && method === "GET" ){
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'text/html')
+    res.write(fs.readFileSync('assets/3.html'))
+    res.end()
+  }else if(path === "/5.json" && method === "GET" ){
+    res.statusCode = 200
+    res.setHeader('Content-Type', 'text/json')
+    res.write(fs.readFileSync('assets/5.json'))
+    res.end()
   }
 })
 server.listen(port)
